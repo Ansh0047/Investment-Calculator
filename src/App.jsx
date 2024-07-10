@@ -19,7 +19,8 @@ function App() {
     setUserInput((prevUserInput) => {
       return {
         ...prevUserInput, // this is syntax is used to copy the data stored in the prevUserInput
-        [inputIdentifier]: newValue, // and this JS syntax is used to set the object's property value
+        [inputIdentifier]: +newValue, // and this JS syntax is used to set the object's property value
+        // and this +sign before the newValue will change the string to the integer value
       };
     });
   }
