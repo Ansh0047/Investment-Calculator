@@ -25,12 +25,14 @@ function App() {
     });
   }
 
+  // to check for the input of duration as it is always +ve and we will show the result when it is +ve
+  const inputValid = userInput.duration > 0;
 
   return (
     <>
       <Header />
       <UserInput userInput={userInput} onSelect={handleChange}/>
-      <Results input={userInput}/>
+      {inputValid ? <Results input={userInput}/> : <p className="center">Put enter the +ve duration.</p>}
     </>
   );
 }
